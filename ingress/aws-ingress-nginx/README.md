@@ -22,11 +22,15 @@ Prerequisites:
 5. Create your own signed TLS Secret - this for the test only
   - ```openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout tls.key -out tls.crt -subj "/CN=nginxsvc/O=nginxsvc"```
   - ```kubectl create secret tls tls-secret --key tls.key --cert tls.crt```
-6. Create the Ingress resource:
-  - testapp-ingress-rules.yaml
-7. Obtain the `Controller/LoadBalancer` ExternalIP:
+6. Obtain the `Controller/LoadBalancer` ExternalIP:
   - ```kubectl get svc --all-namespaces```
-8. Send a request to the LoadBalancer to check if it is working: 
+  - Or open the `Load Balancers` manager in AWS's UI
+7. Create a CNAME record in Route53, so your domain to point to the ELB's DNS:
+  - TODO: add a picture in the AWS console
+8. Create the Ingress resource:
+  - testapp-ingress-rules.yaml
+  - TODO push the manifest itself
+9. Send a request to the LoadBalancer to check if it is working: 
   - ```curl -ikL <LoadBalancer IP>```
 	
 ### Debugging the nginx controller notes:
