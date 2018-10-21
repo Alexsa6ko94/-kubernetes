@@ -7,34 +7,38 @@ Prerequisites:
 
 1. Create the desired namespace that will be used for the ingress:
   - ```kubect apply -f https://raw.githubusercontent.com/Alexsa6ko94/kubernetes-abk8s/master/ingress/aws-ingress-nginx/nginx-ingress-namespace.yaml```
-2. Create Deployment and Service for the Nginx default backend:
-  - nginx-ingress-default-backend.yaml
-  - nginx-ingress-default-backend-service.yaml
-3. Create Deployment and Service for the Nginx controller:
-  - nginx-ingress-controller.yaml
-  - nginx-ingress-controller-service.yaml
+2. Grant access to the ingress controller:
+  - ```kubect apply -f https://raw.githubusercontent.com/Alexsa6ko94/kubernetes-abk8s/master/ingress/aws-ingress-nginx/nginx-ingress-controller-rbac.yaml```
+3. Create Deployment and Service for the Nginx default backend:
+  - ```kubect apply -f https://raw.githubusercontent.com/Alexsa6ko94/kubernetes-abk8s/master/ingress/aws-ingress-nginx/nginx-ingress-default-backend.yaml```
+  - ```kubect apply -f https://raw.githubusercontent.com/Alexsa6ko94/kubernetes-abk8s/master/ingress/aws-ingress-nginx/nginx-ingress-default-backend-service.yaml```  
+4. Create Deployment and Service for the Nginx controller:
+  - ```kubect apply -f https://raw.githubusercontent.com/Alexsa6ko94/kubernetes-abk8s/master/ingress/aws-ingress-nginx/nginx-ingress-controller.yaml```
+  - ```kubect apply -f https://raw.githubusercontent.com/Alexsa6ko94/kubernetes-abk8s/master/ingress/aws-ingress-nginx/nginx-ingress-controller-service.yaml```
 4.  Create Deployment and Service for some app to test:
   - testapp-deployment.yaml
   - testapp-service.yaml
 5. Create your own signed TLS Secret - this for the test only
+  - ```openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout tls.key -out tls.crt -subj "/CN=nginxsvc/O=nginxsvc"```
+  - ```kubectl create secret tls tls-secret --key tls.key --cert tls.crt```
 6. Create the Ingress resource:
   - testapp-ingress-rules.yaml
-7. Obtain the controller/LoadBalancer ExternalIP:
-  - kubectl get svc --all-namespaces
+7. Obtain the `Controller/LoadBalancer` ExternalIP:
+  - ```kubectl get svc --all-namespaces```
 8. Send a request to the LoadBalancer to check if it is working: 
-  - curl -ikL <LoadBalancer IP>
+  - ```curl -ikL <LoadBalancer IP>```
 	
 ### Debugging the nginx controller notes:
 
 1. Inspecting nginx.conf in the nginx-ingress-controller:
   1.1. Find the pod name:
-	- kubectl get po --all-namespaces
+	- ```kubectl get po --all-namespaces```
   1.2. Execute the command against that pod:
-	- kubectl exec -it <pod_name> -- cat /etc/nginx/nginx.conf 
+	- ```kubectl exec -it <pod_name> -- cat /etc/nginx/nginx.conf```
   1.3. Chech the proxy_pass redirections:
-	- kubectl exec -it <pod_name> -- cat /etc/nginx/nginx.conf | grep proxy_pass
-		- Result: proxy_pass <upstream>;
-	- kubectl exec -it <pod_name> -- cat /etc/nginx/nginx.conf | grep upstream <upstream>
+	- ```kubectl exec -it <pod_name> -- cat /etc/nginx/nginx.conf | grep proxy_pass```
+		- `Result: proxy_pass <upstream>;`
+	- ```kubectl exec -it <pod_name> -- cat /etc/nginx/nginx.conf | grep upstream <upstream>```
   1.4. Chech if the upstream definition is pointing to the right servers:
-	- kubectl describe svc/<service_name>
-	- See the field 'Endpoints' and compare them with the server entries int the <upstream> definition
+	- ```kubectl describe svc/<service_name>```
+	- See the field `Endpoints` and compare them with the server entries int the <upstream> definition
