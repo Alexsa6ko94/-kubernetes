@@ -1,4 +1,4 @@
-### AWS ingress-nginx deploy and configure:
+### AWS EKS ingress-nginx deploy and configure:
 More information about the ingress [here](https://kubernetes.io/docs/concepts/services-networking/ingress/)
 
 Prerequisites:
