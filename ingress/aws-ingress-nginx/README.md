@@ -1,5 +1,5 @@
 ### AWS ingress-nginx deploy and configure:
-More information about the ingress [Here](https://kubernetes.io/docs/concepts/services-networking/ingress/)
+More information about the ingress [here](https://kubernetes.io/docs/concepts/services-networking/ingress/)
 
 Prerequisites:
   - You have a working cluster on AWS. If you dont please chech here /https://docs.aws.amazon.com/eks/latest/userguide/getting-started.html/
