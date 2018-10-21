@@ -1,4 +1,4 @@
-### AWS ingress-ngingx deploy and configure:
+### AWS ingress-nginx deploy and configure:
 
 Prerequisites:
   - You have a working cluster on AWS. If you dont please chech here /https://docs.aws.amazon.com/eks/latest/userguide/getting-started.html/
