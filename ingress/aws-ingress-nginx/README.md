@@ -5,7 +5,7 @@ Prerequisites:
   - kubect is configured to talk to your cluster. If no chech here /https://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html/
   - Please note that only the user that was used to create the cluster have permission to create or modify Amazon EKS resources. In order to give some other user credits to do so, edit the ConfigMap as the cluster creator's user and add that user to the ConfigMap. More info here /https://docs.aws.amazon.com/eks/latest/userguide/add-user-role.html/
 
-1. Create the desired namespace that will be used for the ingress:
+1. Create the `nginx-ingress` namespace:
   - ```kubect apply -f https://raw.githubusercontent.com/Alexsa6ko94/kubernetes-abk8s/master/ingress/aws-ingress-nginx/nginx-ingress-namespace.yaml```
 2. Grant access to the ingress controller:
   - ```kubect apply -f https://raw.githubusercontent.com/Alexsa6ko94/kubernetes-abk8s/master/ingress/aws-ingress-nginx/nginx-ingress-controller-rbac.yaml```
