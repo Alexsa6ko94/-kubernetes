@@ -6,8 +6,7 @@ Prerequisites:
   - Please note that only the user that was used to create the cluster have permission to create or modify Amazon EKS resources. In order to give some other user credits to do so, edit the ConfigMap as the cluster creator's user and add that user to the ConfigMap. More info here /https://docs.aws.amazon.com/eks/latest/userguide/add-user-role.html/
 
 1. Create the desired namespace that will be used for the ingress:
-  - nginx-ingress-namespace.yaml
-  - TODO: `kubectl apply -f https://raw.gitcontent.com/Alexsa6ko94/kuberentes-abk8s/ingress/nginx-ingress-namespace.yaml`
+  - ```kubect apply -f https://raw.githubusercontent.com/Alexsa6ko94/kubernetes-abk8s/master/ingress/aws-ingress-nginx/nginx-ingress-namespace.yaml```
 2. Create Deployment and Service for the Nginx default backend:
   - nginx-ingress-default-backend.yaml
   - nginx-ingress-default-backend-service.yaml
