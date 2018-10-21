@@ -34,7 +34,7 @@ Prerequisites:
 9. Send a request to the LoadBalancer to check if it is working: 
   - ```curl -ikL <LoadBalancer IP>```
 	
-### Debugging the nginx controller notes:
+### Debugging the nginx controller itself:
 
 1. Inspecting nginx.conf in the nginx-ingress-controller:
   1.1. Find the pod name:
