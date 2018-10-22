@@ -35,7 +35,7 @@ Prerequisites:
 	
 ### Debugging the nginx controller itself:
 
-1. Inspecting nginx.conf in the nginx-ingress-controller:
+- Inspecting nginx.conf in the nginx-ingress-controller:
   - Find the pod name:
     - ```kubectl get po --all-namespaces```
   - Execute the command against that pod:
