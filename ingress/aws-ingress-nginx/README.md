@@ -2,9 +2,9 @@
 More information about the ingress [here](https://kubernetes.io/docs/concepts/services-networking/ingress/)
 
 Prerequisites:
-  - You have a working cluster on AWS. If you dont please chech here /https://docs.aws.amazon.com/eks/latest/userguide/getting-started.html/
-  - kubectl is configured to talk to your cluster. If no chech here /https://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html/
-  - Please note that only the user that was used to create the cluster have permission to create or modify Amazon EKS resources. In order to give some other user credits to do so, edit the ConfigMap as the cluster creator's user and add that user to the ConfigMap. More info here /https://docs.aws.amazon.com/eks/latest/userguide/add-user-role.html/
+  - You have a working cluster on AWS. If you dont please chech [here](https://docs.aws.amazon.com/eks/latest/userguide/getting-started.html)
+  - kubectl is configured to talk to your cluster. If no chech [here](https://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html)
+  - Please note that only the user that was used to create the cluster have permission to create or modify Amazon EKS resources. In order to give some other user credits to do so, edit the ConfigMap as the cluster creator's user and add that user to the ConfigMap. More info [here](https://docs.aws.amazon.com/eks/latest/userguide/add-user-role.html)
 
 1. Create the `nginx-ingress` namespace:
   - ```kubectl apply -f https://raw.githubusercontent.com/Alexsa6ko94/kubernetes-abk8s/master/ingress/aws-ingress-nginx/nginx-ingress-namespace.yaml```
