@@ -36,14 +36,14 @@ Prerequisites:
 ### Debugging the nginx controller itself:
 
 1. Inspecting nginx.conf in the nginx-ingress-controller:
-  1.1. Find the pod name:
+  - Find the pod name:
     - ```kubectl get po --all-namespaces```
-  1.2. Execute the command against that pod:
+  - Execute the command against that pod:
     - ```kubectl exec -it <pod_name> -- cat /etc/nginx/nginx.conf```
-  1.3. Chech the proxy_pass redirections:
+  - Chech the proxy_pass redirections:
     - ```kubectl exec -it <pod_name> -- cat /etc/nginx/nginx.conf | grep proxy_pass```
       - `Result: proxy_pass <upstream>;`
     - ```kubectl exec -it <pod_name> -- cat /etc/nginx/nginx.conf | grep upstream <upstream>```
-  1.4. Chech if the upstream definition is pointing to the right servers:
+  - Chech if the upstream definition is pointing to the right servers:
     - ```kubectl describe svc/<service_name>```
     - See the field `Endpoints` and compare them with the server entries int the <upstream> definition
