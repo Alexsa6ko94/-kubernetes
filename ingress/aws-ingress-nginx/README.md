@@ -3,20 +3,20 @@ More information about the ingress [here](https://kubernetes.io/docs/concepts/se
 
 Prerequisites:
   - You have a working cluster on AWS. If you dont please chech here /https://docs.aws.amazon.com/eks/latest/userguide/getting-started.html/
-  - kubect is configured to talk to your cluster. If no chech here /https://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html/
+  - kubectl is configured to talk to your cluster. If no chech here /https://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html/
   - Please note that only the user that was used to create the cluster have permission to create or modify Amazon EKS resources. In order to give some other user credits to do so, edit the ConfigMap as the cluster creator's user and add that user to the ConfigMap. More info here /https://docs.aws.amazon.com/eks/latest/userguide/add-user-role.html/
 
 1. Create the `nginx-ingress` namespace:
-  - ```kubect apply -f https://raw.githubusercontent.com/Alexsa6ko94/kubernetes-abk8s/master/ingress/aws-ingress-nginx/nginx-ingress-namespace.yaml```
+  - ```kubectl apply -f https://raw.githubusercontent.com/Alexsa6ko94/kubernetes-abk8s/master/ingress/aws-ingress-nginx/nginx-ingress-namespace.yaml```
 2. Grant access to the ingress controller using RBAC:
-  - ```kubect apply -f https://raw.githubusercontent.com/Alexsa6ko94/kubernetes-abk8s/master/ingress/aws-ingress-nginx/nginx-ingress-controller-rbac.yaml```
+  - ```kubectl apply -f https://raw.githubusercontent.com/Alexsa6ko94/kubernetes-abk8s/master/ingress/aws-ingress-nginx/nginx-ingress-controller-rbac.yaml```
 3. Create Deployment and Service for the Nginx default backend:
-  - ```kubect apply -f https://raw.githubusercontent.com/Alexsa6ko94/kubernetes-abk8s/master/ingress/aws-ingress-nginx/nginx-ingress-default-backend.yaml```
-  - ```kubect apply -f https://raw.githubusercontent.com/Alexsa6ko94/kubernetes-abk8s/master/ingress/aws-ingress-nginx/nginx-ingress-default-backend-service.yaml```
+  - ```kubectl apply -f https://raw.githubusercontent.com/Alexsa6ko94/kubernetes-abk8s/master/ingress/aws-ingress-nginx/nginx-ingress-default-backend.yaml```
+  - ```kubectl apply -f https://raw.githubusercontent.com/Alexsa6ko94/kubernetes-abk8s/master/ingress/aws-ingress-nginx/nginx-ingress-default-backend-service.yaml```
   - If you want to create a custom backend container check [here](https://github.com/kubernetes/ingress-nginx/tree/master/images/404-server)
 4. Create Deployment and Service for the Nginx controller:
-  - ```kubect apply -f https://raw.githubusercontent.com/Alexsa6ko94/kubernetes-abk8s/master/ingress/aws-ingress-nginx/nginx-ingress-controller.yaml```
-  - ```kubect apply -f https://raw.githubusercontent.com/Alexsa6ko94/kubernetes-abk8s/master/ingress/aws-ingress-nginx/nginx-ingress-controller-service.yaml```
+  - ```kubectl apply -f https://raw.githubusercontent.com/Alexsa6ko94/kubernetes-abk8s/master/ingress/aws-ingress-nginx/nginx-ingress-controller.yaml```
+  - ```kubectl apply -f https://raw.githubusercontent.com/Alexsa6ko94/kubernetes-abk8s/master/ingress/aws-ingress-nginx/nginx-ingress-controller-service.yaml```
 4.  Create Deployment and Service for some app to test:
   - testapp-deployment.yaml
   - testapp-service.yaml
