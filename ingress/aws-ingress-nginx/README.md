@@ -17,9 +17,9 @@ Prerequisites:
 4. Create Deployment and Service for the Nginx controller:
   - ```kubectl apply -f https://raw.githubusercontent.com/Alexsa6ko94/kubernetes-abk8s/master/ingress/aws-ingress-nginx/nginx-ingress-controller.yaml```
   - ```kubectl apply -f https://raw.githubusercontent.com/Alexsa6ko94/kubernetes-abk8s/master/ingress/aws-ingress-nginx/nginx-ingress-controller-service.yaml```
-4.  Create Deployment and Service for some app to test:
-  - testapp-deployment.yaml
-  - testapp-service.yaml
+4.  Create Deployment and Service for echoserver app to test:
+  - ```kubectl apply -f https://raw.githubusercontent.com/Alexsa6ko94/kubernetes-abk8s/master/ingress/aws-ingress-nginx/echoserver/echoserver-deployment.yaml```
+  - ```kubectl apply -f https://raw.githubusercontent.com/Alexsa6ko94/kubernetes-abk8s/master/ingress/aws-ingress-nginx/echoserver/echoserver-service.yaml```
 5. Create your own signed TLS Secret - this for the test only
   - ```openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout tls.key -out tls.crt -subj "/CN=nginxsvc/O=nginxsvc"```
   - ```kubectl create secret tls tls-secret --key tls.key --cert tls.crt```
