@@ -17,7 +17,7 @@ Prerequisites:
 4. Create Deployment and Service for the Nginx controller:
   - ```kubectl apply -f https://raw.githubusercontent.com/Alexsa6ko94/kubernetes-abk8s/master/ingress/aws-ingress-nginx/nginx-ingress-controller.yaml```
   - ```kubectl apply -f https://raw.githubusercontent.com/Alexsa6ko94/kubernetes-abk8s/master/ingress/aws-ingress-nginx/nginx-ingress-controller-service.yaml```
-4.  Create Deployment and Service for echoserver app to test:
+4.  Create Namespace, Deployment and Service for `echoserver` app to test with:
   - ```kubectl apply -f https://raw.githubusercontent.com/Alexsa6ko94/kubernetes-abk8s/master/ingress/aws-ingress-nginx/echoserver/echoserver-namespace.yaml```
   - ```kubectl apply -f https://raw.githubusercontent.com/Alexsa6ko94/kubernetes-abk8s/master/ingress/aws-ingress-nginx/echoserver/echoserver-deployment.yaml```
   - ```kubectl apply -f https://raw.githubusercontent.com/Alexsa6ko94/kubernetes-abk8s/master/ingress/aws-ingress-nginx/echoserver/echoserver-service.yaml```
