@@ -18,6 +18,7 @@ Prerequisites:
   - ```kubectl apply -f https://raw.githubusercontent.com/Alexsa6ko94/kubernetes-abk8s/master/ingress/aws-ingress-nginx/nginx-ingress-controller.yaml```
   - ```kubectl apply -f https://raw.githubusercontent.com/Alexsa6ko94/kubernetes-abk8s/master/ingress/aws-ingress-nginx/nginx-ingress-controller-service.yaml```
 4.  Create Deployment and Service for echoserver app to test:
+  - ```kubectl apply -f https://raw.githubusercontent.com/Alexsa6ko94/kubernetes-abk8s/master/ingress/aws-ingress-nginx/echoserver/echoserver-namespace.yaml```
   - ```kubectl apply -f https://raw.githubusercontent.com/Alexsa6ko94/kubernetes-abk8s/master/ingress/aws-ingress-nginx/echoserver/echoserver-deployment.yaml```
   - ```kubectl apply -f https://raw.githubusercontent.com/Alexsa6ko94/kubernetes-abk8s/master/ingress/aws-ingress-nginx/echoserver/echoserver-service.yaml```
 5. Create your own signed TLS Secret - this for the test only
@@ -29,7 +30,7 @@ Prerequisites:
 7. Create a CNAME record in Route53, so your domain to point to the ELB's DNS:
   - TODO: add a picture in the AWS console
 8. Create the Ingress resource:
-  - ```kubectl apply -f https://raw.githubusercontent.com/Alexsa6ko94/kubernetes-abk8s/master/ingress/aws-ingress-nginx/echoserver-ingress-rule.yaml```
+  - ```kubectl apply -f https://raw.githubusercontent.com/Alexsa6ko94/kubernetes-abk8s/master/ingress/aws-ingress-nginx/echoserver/echoserver-ingress-rule.yaml```
 9. Send a request to the LoadBalancer to check if it is working: 
   - ```curl -ikL <LoadBalancer IP>```
 	
