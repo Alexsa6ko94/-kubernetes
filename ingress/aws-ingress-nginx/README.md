@@ -29,7 +29,7 @@ Prerequisites:
 7. Create a CNAME record in Route53, so your domain to point to the ELB's DNS:
   - TODO: add a picture in the AWS console
 8. Create the Ingress resource:
-  - ```kubectl apply -f https://raw.githubusercontent.com/Alexsa6ko94/kubernetes-abk8s/master/ingress/aws-ingress-nginx/test-ingress-rule.yaml```
+  - ```kubectl apply -f https://raw.githubusercontent.com/Alexsa6ko94/kubernetes-abk8s/master/ingress/aws-ingress-nginx/echoserver-ingress-rule.yaml```
 9. Send a request to the LoadBalancer to check if it is working: 
   - ```curl -ikL <LoadBalancer IP>```
 	
