@@ -5,7 +5,7 @@ metadata:
   namespace: echoserver
 spec:
   rules:
-    - host: kuard.investbit.eu
+    - host: echoserver.example.com
       http:
         paths:
           - path: /
