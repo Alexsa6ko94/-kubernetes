@@ -1,8 +1,8 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: test-ingress
-  namespace: nginx-ingress
+  name: echoserver-ingress
+  namespace: echoserver
 spec:
   rules:
     - host: kuard.investbit.eu
@@ -10,5 +10,5 @@ spec:
         paths:
           - path: /
             backend:
-              serviceName: kuard
+              serviceName: echoserver
               servicePort: 80
