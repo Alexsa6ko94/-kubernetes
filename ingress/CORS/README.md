@@ -1,9 +1,11 @@
 ### Cross-origin resource sharing(CORS) on K8S Ingress Nginx
 
 - nginx.ingress.kubernetes.io/enable-cors: If set to true enables CORS for all HTTP Frontend. By default CORS is disabled.
-- nginx.ingress.kubernetes.io/cors-allow-headers: Specifies allowed headers when CORS enabled. Default value is DNT,X-CustomHeader,Keep-    - Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Authorization.
-- nginx.ingress.kubernetes.io/cors-allow-methods: Specifies allowed methods when CORS enabled. Default value is                            - GET,PUT,POST,DELETE,PATCH,OPTIONS.
-- nginx.ingress.kubernetes.io/cors-allow-origin: Specifies allowed origins when CORS enabled. Default value is *.
+- nginx.ingress.kubernetes.io/cors-allow-headers: Specifies allowed headers when CORS enabled. Default value is
+  - DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Authorization.
+- nginx.ingress.kubernetes.io/cors-allow-methods: Specifies allowed methods when CORS enabled. Default value is
+  - GET,PUT,POST,DELETE,PATCH,OPTIONS.
+- nginx.ingress.kubernetes.io/cors-allow-origin: Specifies allowed origins when CORS enabled. Default value is "*".
 
 Using ingress-nginx on Kubernetes makes adding CORS headers painless. Kubernetes ingress-nginx uses annotations as a quick way to allow you to specify the automatic generation of an extensive list of common nginx configuration options.
 
