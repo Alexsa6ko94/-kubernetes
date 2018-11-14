@@ -8,7 +8,7 @@
   - GET,PUT,POST,DELETE,PATCH,OPTIONS.
 - **nginx.ingress.kubernetes.io/cors-allow-origin**: Specifies allowed origins when CORS enabled. Default value is "*".
 
-Full list of Nginx Ingress annotations [here](https://github.com/kubernetes/ingress-nginx/blob/master/docs/user-guide/nginx-configuration/annotations.md)
+#### Full list of Nginx Ingress annotations [here](https://github.com/kubernetes/ingress-nginx/blob/master/docs/user-guide/nginx-configuration/annotations.md)
 
 Using ingress-nginx on Kubernetes makes adding CORS headers painless. Kubernetes ingress-nginx uses annotations as a quick way to allow you to specify the automatic generation of an extensive list of common nginx configuration options.
 
