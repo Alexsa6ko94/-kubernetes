@@ -1,4 +1,4 @@
-###Cross-origin resource sharing(CORS) on K8S Ingress Nginx
+### Cross-origin resource sharing(CORS) on K8S Ingress Nginx
 
 Using ingress-nginx on Kubernetes makes adding CORS headers painless. Kubernetes ingress-nginx uses annotations as a quick way to allow you to specify the automatic generation of an extensive list of common nginx configuration options.
 
@@ -17,7 +17,7 @@ nginx-ingress-controller-f5676dc7-kthxn   1/1       Running   0          26d
 nginx-ingress-controller-f5676dc7-rvhbv   1/1       Running   0          26d
 ```
 
-#Pick a controller and cat the nginx configuration:
+# Pick a controller and cat the nginx configuration:
 
 ```
 # pipe the config to less or your favorite text reader
@@ -26,7 +26,7 @@ kubectl exec -n ingress-nginx \
     cat /etc/nginx/nginx.conf | less
 ```
 
-#You can see that ingress-nginx created some header directives for nginx:
+# You can see that ingress-nginx created some header directives for nginx:
 
 ```
 ...
@@ -34,6 +34,6 @@ more_set_headers 'Access-Control-Allow-Credentials: true';
 ...
 ```
 
-###About CORS
+### About CORS
 
 CORS, or Cross-origin resource sharing consists of a few HTTP response headers intended to let a web browser know if it’s ok to POST data to a specific endpoint. Before a web browser lets Javascript issue a POST to a URL, then performs a “preflight” request. A preflight request is merely a request to the server with the same URL using the method OPTIONS rather than POST. The web browser checks the HTTP headers for CORS related headers to determine if POSTing data on behalf of the user is ok.
