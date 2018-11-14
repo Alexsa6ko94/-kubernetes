@@ -4,7 +4,7 @@
 - **nginx.ingress.kubernetes.io/enable-cors**: If set to true enables CORS for all HTTP Frontend. By default CORS is disabled.
 - **nginx.ingress.kubernetes.io/cors-allow-headers**: Specifies allowed headers when CORS enabled. Default value is:
   - DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Authorization.
-  - Note that "*" is not working, you need to specify them exactly; Example: `nginx.ingress.kubernetes.io/cors-allow-headers: "apikey,signature,name"`
+  - Note that **"*"** is not working, you need to specify them exactly; Example: `nginx.ingress.kubernetes.io/cors-allow-headers: "apikey,signature,name"`
 - **nginx.ingress.kubernetes.io/cors-allow-methods**: Specifies allowed methods when CORS enabled. Default value is:
   - GET,PUT,POST,DELETE,PATCH,OPTIONS.
 - **nginx.ingress.kubernetes.io/cors-allow-origin**: Specifies allowed origins when CORS enabled. Default value is "*".
